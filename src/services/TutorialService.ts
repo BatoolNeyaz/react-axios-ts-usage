@@ -4,7 +4,14 @@ import Tutorial from "../interfaces/Tutorial";
 const apiClient = axios.create({
   baseURL: "http://localhost:8080/api",
   headers: { "Content-type": "application/json" },
+  //   baseURL: "",
+  //   withCredentials: false,
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+  //   },
 });
+
 const findAll = async () => {
   const response = await apiClient.get<Tutorial[]>("/tutorials");
   return response.data;
